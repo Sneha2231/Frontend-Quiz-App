@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <header class="header">
+        <h1>Frontend Quiz</h1>
+        <button id="toggle-theme">🌙</button>
+      </header>
+
+      <!-- Start Screen -->
+      <section id="start-screen">
+        <h2>Welcome to the Frontend Quiz!</h2>
+        <p>Select a topic to get started:</p>
+        <div class="topics">
+          <button onclick="startQuiz('html')">HTML</button>
+          <button onclick="startQuiz('css')">CSS</button>
+          <button onclick="startQuiz('javascript')">JavaScript</button>
+          <button onclick="startQuiz('accessibility')">Accessibility</button>
+        </div>
+      </section>
+
+      <!-- Quiz Screen -->
+      <section id="quiz-screen" class="hidden">
+        <h2 id="question-title"></h2>
+        <div id="options"></div>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+      </section>
+
+      <!-- Result Screen -->
+      <section id="result-screen" class="hidden">
+        <h2>Quiz Complete!</h2>
+        <p id="score-text"></p>
+        <button onclick="restartQuiz()">Restart</button>
+      </section>
+
+      <!-- 🎇 Animation Container -->
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

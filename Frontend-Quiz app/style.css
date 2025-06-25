@@ -1,0 +1,152 @@
+/* Theme Variables */
+:root {
+    --bg: #f2f4f8;
+    --card-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --button-bg: #4c8ef7;
+    --button-hover: #3a78e0;
+    --accent: #4c8ef7;
+}
+
+body.dark {
+    --bg: #121212;
+    --card-bg: #1f1f2b;
+    --text-color: #f0f0f0;
+    --button-bg: #7c94f8;
+    --button-hover: #5a6ee0;
+    --accent: #7c94f8;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0 20px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--button-bg);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#options button {
+    background-color: #ddd;
+    color: #000;
+}
+
+#options button.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+#options button.wrong {
+    background-color: #dc3545;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#next-btn {
+    margin-top: 20px;
+}
+
+/* 🎇 Feedback animation */
+#feedback {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.feedback-show {
+    animation: pop 1s ease;
+    opacity: 1;
+}
+
+@keyframes pop {
+    0% {
+        transform: translate(-50%, 0) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -20px) scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -40px) scale(0.8);
+        opacity: 0;
+    }
+}
